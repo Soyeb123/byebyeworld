@@ -1,0 +1,327 @@
+PS:
+
+1. You have the file on your computer.
+
+2. You have to 'add' that file to git ready to be commited.
+
+3. You 'commit' that file. Means it is now online for people to use. 
+
+
+
+git init 
+
+-- This will create a new subdirectory named .get. 
+-- This will contain all of the necessary repository files. 
+
+
+git status 
+
+-- To check what is being tracked in the project you use git status.
+
+You can have tracked files and untracked files. 
+-- Tracked files == they were in the last snapshot. These can be unmodified/modified or stages.
+
+-- Untracked files == Everything else. i.e. not in your last snapshot and not staging area. etc.
+
+
+
+git add hello.c
+
+-- This will begin to track the file hello.c
+-- This will put the file into staging mode ready to commit. 
+-- This had to be done everytime a file is changed.
+
+git commit 
+
+-- This will commit the file.
+-- This means it is not in the git repository. 
+
+
+
+
+
+git diff hello.c
+
+-- This will show you what was changed in the file since the last commit
+
+
+git diff --cached
+
+-- This will show the difference between the last commit and the staging area file.
+
+
+git commit -a -m "introduced a third line"
+
+-- This commits the file and adds that new message.
+
+
+echo 'junk1' >> junk1.txt 
+echo 'junk2' >> junk2.txt
+echo 'junk3' >> junk3.txt
+
+-- This will create a number of junk files.
+
+git commit -a -m "Mesage here"
+
+-- This will commit all the files. 
+-- This is a shortway to save the file on the git repository with the comments added as you commit. 
+
+
+git rm junk2.txt
+
+-- This will remove the junk2 file.
+
+
+git rm -–cached junk3.txt
+
+-- This will forcefully removed the files even if they have been modified.
+
+
+git rm c_files/\*.c 
+
+-- This will remove all the files from c_files directory which end in *.c
+
+
+
+LAB 2
+
+
+git log 
+
+-- This will show you the history of all the commits that were performed. 
+
+
+git log -p
+
+-- This will show you how much code was in stage of the commit. 
+
+git log -2
+
+-- This will show you the last 2 commits that were performed. 
+
+git log -p --word-diff
+
+-- This will show word diffe rather than the usual line diff. 
+
+echo "It was the best of times, it was the worst of times, it was the age of wisdom, 
+it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, 
+it was the season of Light, it was the season of Darkness, it was the spring of hope, 
+it was the winter of despair, we had everything before us, we had nothing before us, 
+we were all going direct to Heaven, we were all going direct the other way" >> two_cities.txt
+
+-- This will create a new text file with the above paragraph in there.
+
+git status 
+
+-- This will show the current files in your folder which havent been commited. 
+
+git add two_cities.txt
+
+-- This will put the file in the git ready to be commited. 
+
+git commit -a -m "Two Cities"
+
+
+vi two_cities.txt
+
+-- This will open that file in terminal. 
+-- After you have edited your files use:
+
+the Esc key.. then type :wq to save and quit the text command
+
+git log -p --word-diff -1
+
+-- This is showing what is in the original file. 
+-- If the file is commited then there is no differenece. (NOT SURE about --word-diff)
+
+
+git log --stat
+
+-- This prints a more detailed info on the modified files, how many changes were made and how many lines added or removed. 
+
+git log --oneline 
+
+-- This will show the commit hash and the comment that was added with the commit. 
+-- You have other options such as short, full and fuller.
+
+
+git log --pretty 
+
+-- This will show the log output in a different format
+
+
+git log --pretty=format:"%h - %an, %ar : %s"
+
+-- This will show the commits that were all done. 
+-- It will show the commit message and when the commit was made. 
+
+OTHER OPTIONS:
+
+%H    Commit hash
+
+%h    Abbreviated commit hash
+
+%T    Tree hash
+
+%t    Abbreviated tree hash
+
+%P    Parent hashes
+
+%p    Abbreviated parent hashes
+
+%an   Author name
+
+%ae   Author e-mail
+
+%ad   Author date (format respects the --date= option)
+
+%ar   Author date, relative
+
+%cn   Committer name
+
+%ce   Committer email
+
+%cd   Committer date
+
+%cr   Committer date, relative
+
+%s    Subject
+
+
+git log --pretty=format:"%T - %an, %ad, %ae"
+
+-- This will show it in the format: Tree hash: Author name - Author date - Author e-mail
+
+git log --pretty=format:"%T  - %an, %ad: %ae - %s"
+
+-- This will show it in the format: Tree hash: Author name - Author date - Author e-mail - Subject
+
+
+git log --graph
+
+-- This will show the lines on the side of the graph. 
+
+
+-- You have alot of other git log '    ' options. 
+
+
+git log --since=6.weeks
+
+-- This will show everything that you have commited in the last 6 weeks. 
+
+git log --since =="24/02/2017"
+
+-- This will show the files that have been edited since that date.
+
+gitk
+
+-- This will show you visual format of git. 
+
+
+-- UNDOING THINGS
+
+git commit --amend; 
+
+-- This will allow you to amend the message that was written. 
+
+
+
+echo "Data for forgotten file" >> forgotten.txt
+
+git commit -m 'deliberately missed forgotten file'
+
+git add forgotten.txt
+
+git commit --amend -m "now including forgotten.txt" 
+
+git reset HEAD two_cities.txt
+
+-- If you do reset then it will unstage the file. Meaning you have to add it again for it to be commited. 
+
+
+
+git checkout -- two_cities.txt 
+
+-- This will undo the file on your computer so it is now set to the file that is on the git repository.  
+
+
+
+-TAGGING 
+
+-- Tags are a pointer to a specific commit. 
+
+git tag
+
+-- This will show the current projects which have tags associated with it. 
+
+git tag v1.0-1w
+
+-- This will create a tag with the name v1.0-1w
+
+
+git show v1.0-1w
+
+
+
+
+
+
+
+
+-- Lab 3 
+
+-- https://guides.github.com/activities/hello-world/
+-- Followed the instructions from the above link.
+
+-- A repository is used to organise a single project.
+-- Repo can have folders, files, images, videos, spreadsheets and data sets.
+-- You should have a README file. This contains a file with information about your project.
+
+
+-- The hello-world repo can be a place where you store ideas, resources or even discuss things with others.
+
+-- To create a new repo, the top right there is a + sign. You click that and create a new repo. 
+
+
+
+
+-- Branching
+
+-- Branching is the way to work on different versions of a repository at one time. 
+
+-- the branch 'master' will be the definitive branch. 
+-- We use branches to experiment and make edits before committing them to master. 
+
+-- When you create a branch off the 'master' branch then youre making a copy or snapshot of 'master'. 
+-- When a change is ready you merge it into the 'master' branch. 
+
+
+-- PULL REQUESTS
+
+-- When you open a pull request,you’re proposing your changes and requesting that someone review 
+-- and pull in your contribution and merge them into their branch
+
+
+
+-- Merge PULL requests.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
