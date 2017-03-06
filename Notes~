@@ -263,3 +263,65 @@ git show v1.0-1w
 
 
 
+
+
+
+
+
+-- Lab 3 
+
+-- https://guides.github.com/activities/hello-world/
+-- Followed the instructions from the above link.
+
+-- A repository is used to organise a single project.
+-- Repo can have folders, files, images, videos, spreadsheets and data sets.
+-- You should have a README file. This contains a file with information about your project.
+
+
+-- The hello-world repo can be a place where you store ideas, resources or even discuss things with others.
+
+-- To create a new repo, the top right there is a + sign. You click that and create a new repo. 
+
+
+
+
+-- Branching
+
+-- Branching is the way to work on different versions of a repository at one time. 
+
+-- the branch 'master' will be the definitive branch. 
+-- We use branches to experiment and make edits before committing them to master. 
+
+-- When you create a branch off the 'master' branch then youre making a copy or snapshot of 'master'. 
+-- When a change is ready you merge it into the 'master' branch. 
+
+
+-- PULL REQUESTS
+
+-- When you open a pull request,you’re proposing your changes and requesting that someone review 
+-- and pull in your contribution and merge them into their branch
+
+
+
+-- Merge PULL requests.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

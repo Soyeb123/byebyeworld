@@ -74,7 +74,7 @@ git rm junk2.txt
 
 git rm -–cached junk3.txt
 
--- This will forcefully removed the files even if they have been modified.
+-- This will forcefully removed the files even if they have been modified.ith
 
 
 git rm c_files/\*.c 
@@ -277,10 +277,31 @@ git show v1.0-1w
 -- Repo can have folders, files, images, videos, spreadsheets and data sets.
 -- You should have a README file. This contains a file with information about your project.
 
-
 -- The hello-world repo can be a place where you store ideas, resources or even discuss things with others.
 
 -- To create a new repo, the top right there is a + sign. You click that and create a new repo. 
+
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/Soyeb123/hello-world
+git push -u origin master
+
+
+
+git push origin master
+
+-- This will push the files from the local computer to the one you logged on to with in Git.
+
+git remote
+
+-- This will show the remote connections we have.
+
+git remote -v
+
+-- This will show the Git URL for the remote connection. 
+
+
 
 
 
